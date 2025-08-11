@@ -6,6 +6,7 @@ body, html, #root {
   height: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f0f2f5;
+  font-size: 14px; /* Fonte base menor */
 }
 
 /* Container principal do painel */
@@ -24,12 +25,12 @@ body, html, #root {
 
 /* Sidebar fixa */
 .sidebar-painel {
-  width: 220px;
+  width: 180px; /* Menor largura */
   background-color: #2c3e50;
   color: white;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 0.8rem; /* Menos padding */
   box-sizing: border-box;
 }
 
@@ -38,12 +39,12 @@ body, html, #root {
   background: none;
   border: none;
   color: white;
-  padding: 0.8rem 1rem;
-  margin-bottom: 0.5rem;
+  padding: 0.5rem 0.8rem; /* Menos padding */
+  margin-bottom: 0.4rem; /* Menos espaçamento */
   text-align: left;
-  font-size: 1rem;
+  font-size: 0.9rem; /* Fonte menor */
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
@@ -55,17 +56,18 @@ body, html, #root {
 /* Conteúdo principal (main) */
 .main {
   flex: 1;
-  padding: 2rem;
+  padding: 1.5rem; /* Menos padding */
   background-color: #fff;
   overflow-y: auto;
   box-sizing: border-box;
+  font-size: 0.9rem; /* Fonte menor */
 }
 
 /* Header fixo */
 .header-painel {
   background-color: #3498db;
   color: white;
-  padding: 1rem 2rem;
+  padding: 0.6rem 1.2rem; /* Menos padding */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -74,12 +76,12 @@ body, html, #root {
   top: 0;
   z-index: 100;
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: 1rem; /* Fonte menor */
 }
 
 /* Menu hamburguer */
 .menu-btn {
-  font-size: 1.5rem;
+  font-size: 1.2rem; /* Menor */
   background: none;
   border: none;
   color: white;
@@ -90,25 +92,26 @@ body, html, #root {
 /* Dropdown do menu */
 .dropdown-menu {
   position: absolute;
-  right: 2rem;
-  top: 3.5rem;
+  right: 1.5rem;
+  top: 3rem;
   background: white;
   border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   display: flex;
   flex-direction: column;
-  min-width: 150px;
+  min-width: 130px; /* Menor largura */
   z-index: 200;
 }
 
 .dropdown-menu button {
   background: none;
   border: none;
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 0.8rem; /* Menos padding */
   cursor: pointer;
   text-align: left;
   color: #333;
   font-weight: 500;
+  font-size: 0.9rem;
   transition: background-color 0.2s ease;
 }
 
@@ -117,7 +120,7 @@ body, html, #root {
 }
 
 /* Modal perfil */
-.modal {
+.modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -125,74 +128,43 @@ body, html, #root {
   height: 100vh;
   background-color: rgba(0,0,0,0.5);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   z-index: 300;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
-.modal-conteudo {
+.modal-container {
   background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 400px;
+  padding: 1.5rem;
+  border-radius: 10px;
+  max-width: 350px; /* Um pouco menor */
   width: 90%;
   box-sizing: border-box;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  font-size: 0.9rem; /* Fonte menor */
 }
 
-.modal-conteudo h2 {
+.modal-container h2 {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   color: #2c3e50;
+  font-size: 1.25rem;
 }
 
-.modal-conteudo p {
-  margin: 0.3rem 0;
-  font-size: 1rem;
+.modal-container p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
   color: #444;
 }
 
-.modal-conteudo button {
-  margin-top: 1.5rem;
+.modal-container button {
+  margin-top: 1rem;
   background-color: #3498db;
   color: white;
-  padding: 0.6rem 1.2rem;
+  padding: 0.5rem 1rem; /* Menor padding */
   border: none;
-  border-radius: 8px;
+  border-radius: 7px;
   cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-
-.modal-conteudo button:hover {
-  background-color: #2980b9;
-}
-
-/* Scrollbar customizada para main */
-.main::-webkit-scrollbar {
-  width: 8px;
-}
-
-.main::-webkit-scrollbar-thumb {
-  background-color: #3498db;
-  border-radius: 4px;
-}
-
-/* Responsividade simples */
-@media (max-width: 768px) {
-  .sidebar-painel {
-    width: 60px;
-    padding: 0.5rem;
-  }
-
-  .sidebar-painel button {
-    padding: 0.5rem;
-    font-size: 0.85rem;
-    text-align: center;
-  }
-
-  .header-painel {
-    font-size: 1rem;
-    padding: 1rem;
-  }
-}
+  font-weight
