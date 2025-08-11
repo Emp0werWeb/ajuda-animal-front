@@ -3,6 +3,8 @@ import { useOutletContext } from 'react-router-dom';
 import axios from 'axios';
 import './Publicacoes.css';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000';
+
 function Publicacoes() {
   const { ong } = useOutletContext() || {};
   const [historias, setHistorias] = useState([]);
@@ -23,7 +25,7 @@ function Publicacoes() {
 
   const buscarHistorias = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/historias/ong/${ong.id}`, {
+      const res = await axios.get(`${API_BASE_URL}/historias/ong/${ong.id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setHistorias(res.data || []);
@@ -43,7 +45,6 @@ function Publicacoes() {
     if (file) {
       setNovaHistoria((prev) => ({ ...prev, foto: file }));
     }
-    // Se quiser limpar o input file após seleção, pode usar ref (opcional)
   };
 
   const handlePublicarHistoria = async () => {
@@ -62,10 +63,10 @@ function Publicacoes() {
     try {
       setCarregando(true);
 
-      await axios.post('http://localhost:3000/historias', formData, {
+      await axios.post(`${API_BASE_URL}/historias`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
-          // NÃO definir Content-Type aqui, deixa o axios fazer
+          // Content-Type será definido automaticamente pelo axios para multipart/form-data
         },
       });
 
