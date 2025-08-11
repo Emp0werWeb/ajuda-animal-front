@@ -9,10 +9,13 @@ export default function Login() {
   const [senha, setSenha] = useState('');
   const navigate = useNavigate();
 
+  // Pega a URL base da API da variável ambiente ou usa localhost no dev
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000';
+
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:3000/api/ongs/login', {
+      const res = await axios.post(`${API_BASE_URL}/api/ongs/login`, {
         email,
         senha
       });
