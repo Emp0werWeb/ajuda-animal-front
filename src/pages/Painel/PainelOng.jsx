@@ -15,10 +15,8 @@ function PainelOng() {
   useEffect(() => {
     const token = localStorage.getItem('token');
 
-    // 🔍 Verificar token no console
     console.log('Token recuperado:', token);
 
-    // ✅ Se não houver token, redireciona imediatamente
     if (!token) {
       navigate('/login');
       return;
@@ -38,7 +36,6 @@ function PainelOng() {
 
     carregarDados();
 
-    // Redirecionar para /painel/publicacoes se estiver na raiz do painel
     if (window.location.pathname === '/painel') {
       navigate('/painel/publicacoes', { replace: true });
     }
@@ -53,8 +50,8 @@ function PainelOng() {
       </PainelLayout>
 
       {mostrarPerfil && (
-        <div className="modal">
-          <div className="modal-conteudo">
+        <div className="modal-overlay">
+          <div className="modal-container">
             <h2>Perfil da ONG</h2>
             <p><strong>Nome:</strong> {ong.nome}</p>
             <p><strong>CNPJ:</strong> {ong.cnpj}</p>
