@@ -20,6 +20,9 @@ export default function CadastroOng() {
   const [sucesso, setSucesso] = useState(false);
   const [erro, setErro] = useState('');
 
+  // URL base da API via variável de ambiente com fallback para localhost
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000';
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -28,7 +31,7 @@ export default function CadastroOng() {
     e.preventDefault();
     setErro('');
     try {
-      await axios.post('http://localhost:3000/api/ongs/cadastrar', formData);
+      await axios.post(`${API_BASE_URL}/api/ongs/cadastrar`, formData);
       setSucesso(true);
     } catch (err) {
       console.error(err);
@@ -68,4 +71,3 @@ export default function CadastroOng() {
     </div>
   );
 }
-
