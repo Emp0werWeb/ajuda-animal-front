@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './CadastroOng.css'; // crie esse arquivo para estilização
+import './Cadastroong.css'; // crie esse arquivo para estilização
 
 export default function CadastroOng() {
   const [formData, setFormData] = useState({
@@ -68,3 +68,4 @@ export default function CadastroOng() {
     </div>
   );
 }
+
