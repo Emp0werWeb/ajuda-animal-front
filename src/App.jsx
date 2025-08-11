@@ -6,7 +6,7 @@ import CadastroOng from './pages/Cadastroong';
 import PainelOng from './pages/Painel/PainelOng';
 import Publicacoes from './pages/Painel/Publicacoes';
 import Adocao from './pages/Painel/Adocao';
-import DoacoesSolicitacoes from './pages/painel/DoacoesSolicitacoes';
+import DoacoesSolicitacoes from './pages/Painel/DoacoesSolicitacoes';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
        <Route index element={<Publicacoes />} /> 
         <Route path="publicacoes" element={<Publicacoes />} />
         <Route path="adocao" element={<Adocao />} />
-        <Route path="/painel/doacoes" element={<DoacoesSolicitacoes />} />
+        <Route path="doacoes" element={<DoacoesSolicitacoes />} />
       </Route>
     </Routes>
   );
