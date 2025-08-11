@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './Adocao.css';
+import './adocao.css';
 
 const API_URL = 'http://localhost:3000/api/animais';
 
@@ -146,3 +146,4 @@ function AnimaisAdocao() {
 }
 
 export default AnimaisAdocao;
+
