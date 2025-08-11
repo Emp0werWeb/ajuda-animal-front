@@ -9,6 +9,8 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  padding: 1rem; /* espaçamento nas bordas para celular */
+  box-sizing: border-box;
 }
 
 .modal-container {
@@ -16,8 +18,10 @@
   padding: 20px;
   border-radius: 8px;
   width: 400px;
+  max-width: 100%; /* para caber em telas pequenas */
   max-height: 90vh;
   overflow-y: auto;
+  box-sizing: border-box;
 }
 
 .modal-container form label {
@@ -31,4 +35,12 @@
   padding: 6px;
   margin-top: 4px;
   box-sizing: border-box;
+}
+
+/* Opcional: ajustar largura para telas bem pequenas */
+@media (max-width: 450px) {
+  .modal-container {
+    width: 100%;
+    padding: 15px;
+  }
 }
