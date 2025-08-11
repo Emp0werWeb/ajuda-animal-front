@@ -23,9 +23,12 @@ export default function HomeListAnimais() {
     'Curitiba', 'Brasília', 'Xanxerê', 'Salvador', 'Campinas'
   ];
 
+  // URL base da API via variável de ambiente, fallback localhost
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000';
+
   const buscarAnimais = async () => {
     try {
-      const res = await axios.get('http://localhost:3000/api/animais?status=Aguardando%20adoção');
+      const res = await axios.get(`${API_BASE_URL}/api/animais?status=Aguardando%20adoção`);
       const filtrados = res.data.filter(
         (a) =>
           (!cidade || a.cidade === cidade) &&
@@ -68,7 +71,7 @@ export default function HomeListAnimais() {
     }
 
     try {
-      await axios.post('http://localhost:3000/solicitacoes', {
+      await axios.post(`${API_BASE_URL}/solicitacoes`, {
         ...formData,
         animal_id: animalSelecionado.id
       });
@@ -141,11 +144,31 @@ export default function HomeListAnimais() {
         <div className="modal-overlay">
           <div className="modal">
             <h2>Solicitar adoção de: {animalSelecionado.nome}</h2>
-            <input placeholder="Seu nome" value={formData.nome_doador} onChange={e => setFormData({ ...formData, nome_doador: e.target.value })} />
-            <input placeholder="Cidade" value={formData.cidade} onChange={e => setFormData({ ...formData, cidade: e.target.value })} />
-            <input placeholder="WhatsApp" value={formData.whatsapp} onChange={e => setFormData({ ...formData, whatsapp: e.target.value })} />
-            <input placeholder="Email (opcional)" value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} />
-            <textarea placeholder="Mensagem para ONG" value={formData.descricao} onChange={e => setFormData({ ...formData, descricao: e.target.value })}></textarea>
+            <input
+              placeholder="Seu nome"
+              value={formData.nome_doador}
+              onChange={e => setFormData({ ...formData, nome_doador: e.target.value })}
+            />
+            <input
+              placeholder="Cidade"
+              value={formData.cidade}
+              onChange={e => setFormData({ ...formData, cidade: e.target.value })}
+            />
+            <input
+              placeholder="WhatsApp"
+              value={formData.whatsapp}
+              onChange={e => setFormData({ ...formData, whatsapp: e.target.value })}
+            />
+            <input
+              placeholder="Email (opcional)"
+              value={formData.email}
+              onChange={e => setFormData({ ...formData, email: e.target.value })}
+            />
+            <textarea
+              placeholder="Mensagem para ONG"
+              value={formData.descricao}
+              onChange={e => setFormData({ ...formData, descricao: e.target.value })}
+            ></textarea>
             <div className="modal-buttons">
               <button onClick={enviarSolicitacao} className="btn-confirmar">Enviar</button>
               <button onClick={fecharModal} className="btn-cancelar">Cancelar</button>
