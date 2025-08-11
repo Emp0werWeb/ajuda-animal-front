@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './adocao.css';
 
-const API_URL = 'http://localhost:3000/api/animais';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000';
 
 function AnimaisAdocao() {
   const [nome, setNome] = useState('');
@@ -14,7 +14,7 @@ function AnimaisAdocao() {
 
   const carregarAnimais = async () => {
     try {
-      const res = await fetch(API_URL + '/meus', {
+      const res = await fetch(`${API_BASE_URL}/api/animais/meus`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -45,7 +45,7 @@ function AnimaisAdocao() {
     formData.append('foto', foto);
 
     try {
-      const res = await fetch(API_URL, {
+      const res = await fetch(`${API_BASE_URL}/api/animais`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -69,7 +69,7 @@ function AnimaisAdocao() {
 
   const atualizarStatus = async (id, novoStatus) => {
     try {
-      const res = await fetch(`${API_URL}/${id}/status`, {
+      const res = await fetch(`${API_BASE_URL}/api/animais/${id}/status`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -102,7 +102,11 @@ function AnimaisAdocao() {
           onChange={(e) => setDescricao(e.target.value)}
           required
         />
-        <input type="file" onChange={(e) => setFoto(e.target.files[0])} required />
+        <input
+          type="file"
+          onChange={(e) => setFoto(e.target.files[0])}
+          required
+        />
         <select value={status} onChange={(e) => setStatus(e.target.value)}>
           <option value="Aguardando adoção">Aguardando adoção</option>
           <option value="Adotado">Adotado</option>
@@ -124,7 +128,14 @@ function AnimaisAdocao() {
                 <h4>{animal.nome}</h4>
                 <p>{animal.descricao}</p>
                 <p>
-                  Status: <strong className={`status-badge ${animal.status === 'Adotado' ? 'adotado' : 'aguardando'}`}>{animal.status}</strong>
+                  Status:{' '}
+                  <strong
+                    className={`status-badge ${
+                      animal.status === 'Adotado' ? 'adotado' : 'aguardando'
+                    }`}
+                  >
+                    {animal.status}
+                  </strong>
                 </p>
                 <select
                   className="select-status"
@@ -146,4 +157,3 @@ function AnimaisAdocao() {
 }
 
 export default AnimaisAdocao;
-
