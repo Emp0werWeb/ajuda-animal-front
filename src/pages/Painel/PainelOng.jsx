@@ -4,6 +4,8 @@ import axios from 'axios';
 import PainelLayout from '../../components/PainelLayout';
 import './PainelOng.css';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000';
+
 function PainelOng() {
   const [ong, setOng] = useState(null);
   const [mostrarPerfil, setMostrarPerfil] = useState(false);
@@ -24,7 +26,7 @@ function PainelOng() {
 
     async function carregarDados() {
       try {
-        const res = await axios.get('http://localhost:3000/api/ongs/obter-perfil', {
+        const res = await axios.get(`${API_BASE_URL}/api/ongs/obter-perfil`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setOng(res.data.ong);
