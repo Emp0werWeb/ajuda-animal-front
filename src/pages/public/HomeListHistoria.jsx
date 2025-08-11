@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './HomeListHistoria.css';
-import LinkedinDevImg from "../../assets/LinkedinDev.png"; // <-- ajuste se estiver em pasta diferente
+import LinkedinDevImg from "../../assets/LinkedinDev.png";
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export default function HomeListHistoria() {
   const [historias, setHistorias] = useState([]);
@@ -41,7 +43,7 @@ export default function HomeListHistoria() {
       if (nome.trim()) params.nome = nome.trim();
       if (cidade) params.cidade = cidade;
 
-      const response = await axios.get('http://localhost:3000/historias/busca', { params });
+      const response = await axios.get(`${API_BASE_URL}/historias/busca`, { params });
       setHistorias(response.data);
     } catch (err) {
       setError('Erro ao carregar histórias.');
@@ -86,7 +88,7 @@ export default function HomeListHistoria() {
     }
 
     try {
-      await axios.post('http://localhost:3000/doacoes', {
+      await axios.post(`${API_BASE_URL}/doacoes`, {
         historia_id: historiaSelecionada.id,
         ong_id: historiaSelecionada.ong_id,
         ...formDoacao,
@@ -160,7 +162,6 @@ export default function HomeListHistoria() {
         ))}
       </div>
 
-      {/* MODAL DE DOAÇÃO */}
       {mostrarModal && (
         <div className="modal-overlay">
           <div className="modal">
