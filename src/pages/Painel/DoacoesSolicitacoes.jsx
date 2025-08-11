@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './DoacoesSolicitacoes.css';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000';
+
 export default function DoacoesSolicitacoes() {
   const [doacoes, setDoacoes] = useState([]);
   const [solicitacoes, setSolicitacoes] = useState([]);
@@ -14,10 +16,10 @@ export default function DoacoesSolicitacoes() {
     async function carregarDados() {
       try {
         const [resDoacoes, resSolicitacoes] = await Promise.all([
-          axios.get('http://localhost:3000/doacoes/minhas', {
+          axios.get(`${API_BASE_URL}/doacoes/minhas`, {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get('http://localhost:3000/solicitacoes/minhas', {
+          axios.get(`${API_BASE_URL}/solicitacoes/minhas`, {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ]);
