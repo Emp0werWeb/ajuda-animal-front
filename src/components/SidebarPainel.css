@@ -1,0 +1,26 @@
+.sidebar-painel {
+  width: 200px;
+  background-color: #f8f8f8;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-right: 1px solid #ddd;
+  height: 100vh;
+}
+
+.sidebar-painel button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  border-left: 4px solid transparent;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.sidebar-painel button:hover {
+  background-color: #eaeaea;
+  border-left-color: #333;
+}

@@ -1,0 +1,115 @@
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+h2, h3 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.form-animal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.form-animal input,
+.form-animal textarea,
+.form-animal select {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.form-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-submit {
+  padding: 0.6rem 1.5rem;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-submit:hover {
+  background: #219150;
+}
+
+.lista-animais-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card-animal {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.card-animal:hover {
+  transform: translateY(-3px);
+}
+
+.card-img-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-info {
+  padding: 1rem;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-left: 0.3rem;
+}
+
+.status-badge.aguardando {
+  background-color: #f1c40f;
+  color: #fff;
+}
+
+.status-badge.adotado {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.select-status {
+  margin-top: 0.5rem;
+  padding: 0.4rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  width: 100%;
+}

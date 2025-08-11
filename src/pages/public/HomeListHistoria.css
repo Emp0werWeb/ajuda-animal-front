@@ -1,0 +1,200 @@
+/* ===== MODAL ===== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.modal {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(48, 16, 16, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal h2 {
+  margin-top: 0;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Campos do formulário */
+.modal input,
+.modal textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+.modal textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Botões */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-confirmar {
+  background-color: #1a94dd;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  flex: 1;
+}
+
+.btn-confirmar:hover {
+  background-color: #1576b8;
+}
+
+.btn-cancelar {
+  background-color: #aaa;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  flex: 1;
+}
+
+.btn-cancelar:hover {
+  background-color: #888;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+  .modal {
+    padding: 1.2rem;
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+  }
+
+  .btn-confirmar,
+  .btn-cancelar {
+    width: 100%;
+  }
+}
+
+.input-busca,
+.select-cidade {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin: 0 0.5rem 1rem 0;
+}
+
+/* ===== HISTÓRIAS QUE INSPIRAM ===== */
+.historia-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background: #fff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.historia-header {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 1rem;
+}
+
+.historia-imagem {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 1rem 0;
+}
+
+.historia-conteudo {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444;
+  margin-bottom: 1rem;
+  text-align: justify;
+  max-width: 600px;
+}
+
+.historia-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.data-criacao {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.btn-doar {
+  background-color: #1a94dd;
+  color: white;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-doar:hover {
+  background-color: #1576b8;
+}
+
+/* Responsivo extra */
+@media (max-width: 600px) {
+  .historia-imagem {
+    max-width: 90%;
+  }
+
+  .historia-conteudo {
+    padding: 0 1rem;
+    text-align: left;
+  }
+}
+
+.modal-imagem {
+  max-width: 40%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}

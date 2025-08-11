@@ -1,0 +1,60 @@
+/* src/components/Header.css */
+
+.header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px 32px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fdfdfd; /* Verde escuro */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-entrar,
+.btn-cadastrar {
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-entrar {
+  background-color: transparent;
+  color: #2e7d32;
+  border: 2px solid #2e7d32;
+}
+
+.btn-entrar:hover {
+  background-color: #e8f5e9;
+}
+
+.btn-cadastrar {
+  background-color: #2e7d32;
+  color: white;
+}
+
+.btn-cadastrar:hover {
+  background-color: #1b5e20;
+}

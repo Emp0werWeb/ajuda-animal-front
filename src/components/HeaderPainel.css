@@ -1,0 +1,51 @@
+.header-painel {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-painel h1 {
+  font-size: 1.5rem;
+}
+
+.menu {
+  position: relative;
+}
+
+.menu-btn {
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Fundo escuro no dropdown, texto branco para contraste */
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: #333;
+  border: 1px solid #555;
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
+  z-index: 10;
+}
+
+.dropdown-menu button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.dropdown-menu button:hover {
+  background-color: #444;
+}

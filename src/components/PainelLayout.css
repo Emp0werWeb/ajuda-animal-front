@@ -1,0 +1,17 @@
+.painel-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.conteudo {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.main-painel {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
